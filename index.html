@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f1820">
 <title>Snow Slider Puzzles</title>
 <meta name="description" content="Slide a penguin across the ice and find the way to the flag. 210 icy puzzles across 13 mountains, for iPhone, iPad and Android.">
 <meta property="og:title" content="Snow Slider Puzzles">
 <meta property="og:description" content="Slide a penguin across the ice and find the way to the flag.">
-<meta property="og:image" content="img/hero_blizzard_crown.jpg">
+<meta property="og:image" content="img/hero_banner.jpg">
 <style>
 	:root {
-		--bg: #f4f8fb; --card: #ffffff; --text: #1d2a36; --muted: #5a6b7a; --accent: #2d6f9e; --line: #dbe5ee;
+		color-scheme: dark;
+		--bg: #0f1820; --card: #17232e; --text: #e4edf4; --muted: #9cb0c0; --accent: #7cc0ec; --line: #26394a;
 		--night: #13233a;
-	}
-	@media (prefers-color-scheme: dark) {
-		:root { --bg: #0f1820; --card: #17232e; --text: #e4edf4; --muted: #9cb0c0; --accent: #7cc0ec; --line: #26394a; }
 	}
 	* { box-sizing: border-box; }
 	[hidden] { display: none !important; }
@@ -27,15 +26,23 @@
 
 	.hero { position: relative; background: var(--night); color: #fff; overflow: hidden; }
 	.slides { position: relative; height: 420px; }
-	.slides img {
+	.slides > * {
 		position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
 		opacity: 0; transition: opacity 1.4s ease-in-out;
 	}
-	.slides img.on { opacity: 0.95; }
+	.slides > .on { opacity: 0.95; }
+	/* The banner carries its own title, so it's shown whole (on a blurred copy of itself
+	   where the header's shape differs) and the page's title steps aside for it. */
+	.slides > .banner.on { opacity: 1; }
+	.banner img { position: absolute; inset: 0; width: 100%; height: 100%; }
+	.banner .fill { object-fit: cover; filter: blur(24px) brightness(0.9); transform: scale(1.15); }
+	.banner .art { object-fit: contain; }
 	.hero .text {
 		position: absolute; inset: auto 0 0 0; padding: 96px 16px 32px;
 		background: linear-gradient(to top, rgba(19, 35, 58, 0.92), rgba(19, 35, 58, 0));
+		transition: opacity 0.8s ease-in-out;
 	}
+	.hero.art .text { opacity: 0; }
 	.hero .inner { max-width: 960px; margin: 0 auto; }
 	.hero h1 { font-size: 44px; line-height: 1.1; margin: 0 0 6px; letter-spacing: -0.5px; }
 	.hero p { margin: 0; font-size: 20px; color: #d5e6f3; }
@@ -147,9 +154,13 @@
 </style>
 </head>
 <body>
-<header class="hero">
+<header class="hero art">
 	<div class="slides">
-		<img class="on" src="img/hero_blizzard_crown.jpg" style="object-position: center 12%" alt="The map at Blizzard Crown: the penguin at its camp by a frozen river and a little bridge">
+		<div class="banner on" data-seconds="8">
+			<img class="fill" src="img/hero_banner.jpg" alt="">
+			<img class="art" src="img/hero_banner.jpg" alt="Snow Slider: plan every slide! 210 icy puzzles, 13 mountains to climb, 12 hats to earn. The penguin in a propeller hat slides past Frost Peak">
+		</div>
+		<img src="img/hero_blizzard_crown.jpg" style="object-position: center 12%" alt="The map at Blizzard Crown: the penguin at its camp by a frozen river and a little bridge" loading="lazy">
 		<img src="img/hero_rune_peak.jpg" style="object-position: center 12%" alt="The map at Rune Peak: the penguin at its camp among ice spikes" loading="lazy">
 		<img src="img/hero_ursa_peak.jpg" style="object-position: center 22%" alt="The map at Ursa Peak: the bear's den, polar bears and the gondola" loading="lazy">
 		<img src="img/hero_icefang_peak.jpg" style="object-position: center 4%" alt="The map at Icefang Peak: one giant ice spike ringed with smaller ones" loading="lazy">
@@ -240,18 +251,24 @@
 	</footer>
 </main>
 <script>
-	// The header's mountains take turns, a slow crossfade every few seconds; held on the
-	// first for anyone whose device asks for reduced motion.
+	// The header's pictures take turns, a slow crossfade every few seconds (a slide's
+	// data-seconds, else 5); the page's title steps aside while the banner, which has its
+	// own, shows. Held on the first for anyone whose device asks for reduced motion.
 	(function () {
-		var slides = document.querySelectorAll(".slides img");
+		var hero = document.querySelector(".hero");
+		var slides = document.querySelectorAll(".slides > *");
 		if (slides.length < 2 || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 		var shown = 0;
-		setInterval(function () {
-			if (document.hidden) return;
-			slides[shown].classList.remove("on");
-			shown = (shown + 1) % slides.length;
-			slides[shown].classList.add("on");
-		}, 5000);
+		function next() {
+			if (!document.hidden) {
+				slides[shown].classList.remove("on");
+				shown = (shown + 1) % slides.length;
+				slides[shown].classList.add("on");
+				hero.classList.toggle("art", slides[shown].classList.contains("banner"));
+			}
+			setTimeout(next, (Number(slides[shown].dataset.seconds) || 5) * 1000);
+		}
+		setTimeout(next, (Number(slides[0].dataset.seconds) || 5) * 1000);
 	})();
 
 	// A screenshot clicked opens big over the page: arrows (buttons or keys) step through

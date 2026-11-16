@@ -3,14 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f1820">
 <title>About Snow Slider</title>
-<meta name="description" content="Snow Slider Puzzles is made by Ricardo, a solo developer, with the help of Karla.">
+<meta name="description" content="Snow Slider Puzzles is made by Ricardo, a solo developer, with the help of Karla, friends and family.">
 <style>
 	:root {
-		--bg: #f4f8fb; --card: #ffffff; --text: #1d2a36; --muted: #5a6b7a; --accent: #2d6f9e; --line: #dbe5ee;
-	}
-	@media (prefers-color-scheme: dark) {
-		:root { --bg: #0f1820; --card: #17232e; --text: #e4edf4; --muted: #9cb0c0; --accent: #7cc0ec; --line: #26394a; }
+		color-scheme: dark;
+		--bg: #0f1820; --card: #17232e; --text: #e4edf4; --muted: #9cb0c0; --accent: #7cc0ec; --line: #26394a;
 	}
 	* { box-sizing: border-box; }
 	[hidden] { display: none !important; }
@@ -21,10 +20,13 @@
 	main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
 	a { color: var(--accent); }
 	.back { display: inline-block; margin-bottom: 24px; font-size: 15px; text-decoration: none; }
-	h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; }
-	.lead { color: var(--muted); margin: 0 0 24px; }
+	h1 { font-size: 30px; line-height: 1.2; margin: 0 0 24px; }
 	.picture { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; border-radius: 16px; border: 1px solid var(--line); display: block; margin: 0 0 28px; }
 	h2 { font-size: 20px; margin: 36px 0 12px; }
+	.note {
+		margin: 28px 0 0; padding: 4px 20px; background: var(--card);
+		border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0;
+	}
 
 	.social { display: flex; flex-wrap: wrap; gap: 12px; }
 	.social a {
@@ -43,25 +45,51 @@
 <main>
 	<a class="back" href="index.html">‹ Snow Slider Puzzles</a>
 	<h1>About</h1>
-	<p class="lead">A penguin, a lot of ice, and two people.</p>
 
 	<img class="picture" src="img/about_penguin.jpg" alt="The penguin in its viking helmet at Frost Peak's camp, a little cabin behind it">
 
-	<p>Hi, I'm Ricardo. I've been a software engineer for 8 years, and Snow Slider is the game
-	I build in my own time, as a solo developer: the levels, the code, the art and the sounds
-	(every sound effect is made in code), in Godot.</p>
+	<p>Hi, I'm Ricardo. I've been a software developer for eight years and a gamer for even
+	longer, so I finally decided to try making a game myself. Snow Slider is the result, built
+	in my free time using Godot, with everything from the code and levels to the art and
+	sounds (every sound effect is generated in code!).</p>
 
-	<p>It started with one simple idea: on ice, you can't stop halfway. From there it grew
-	mountain by mountain, each one adding a new thing to slide into, bounce off or
-	push around, until a penguin had 13 mountains to climb.</p>
+	<p>I've always liked games that make you think and figure things out, whether it's solving
+	a puzzle that takes a while to click, building empires, planning strategies or exploring
+	ancient ruins. I like the challenge of figuring things out and discovering new places.
+	When I started Snow Slider, though, I wanted to keep things simple. The idea was to make a
+	puzzle game where, once you start sliding on ice, you can't stop until something gets in
+	your way. If you've ever slipped on ice, you know how that goes. From there, I kept adding
+	new mechanics, obstacles and things to experiment with, until somehow I ended up with 13
+	mountains, different worlds to explore, a bit of sci-fi and a penguin with an ever-growing
+	collection of hats.</p>
 
-	<p>I didn't make it alone, though. My girlfriend, Karla, has played every version of it:
-	she tries the new levels first, tells me when one is too hard or not fun yet, and has
-	shaped more of the game than anyone. If a level feels just right, she probably had a
-	hand in it.</p>
+	<p>While I built Snow Slider myself, I didn't do it alone. Friends and family have helped
+	test levels, shared ideas and spotted things I completely missed. I've also discovered how
+	frustrating it can be to watch someone play your game and completely ignore a rule you
+	thought was obvious.</p>
 
-	<p>Thank you for playing. If you'd like to say hello, report a bug or share a solve, I'd
-	love to hear from you.</p>
+	<p>Karla, my girlfriend, has been a big part of the game from the beginning. She's played
+	pretty much every version, tested new levels, reviewed descriptions and helped come up with
+	ideas like hidden Easter eggs and daily challenges. As someone who usually prefers
+	story-driven games and murder mysteries, she's a tough critic, and we don't always agree.
+	But she's shaped more of the game than anyone else, and quite a few levels wouldn't be the
+	same without her.</p>
+
+	<p>We hope Snow Slider is something you can pick up whenever you need a break, whether
+	you're on a crowded bus, waiting at the doctor's office or just tired of scrolling through
+	social media and reading bad news. Something fun that makes you think, lets you explore a
+	little and gives you that satisfying feeling when you finally figure out a puzzle.</p>
+
+	<p>Thanks for playing! If you find a bug, have an idea or want to share a clever solution,
+	<a href="mailto:snowsliderpuzzles@gmail.com">let us know</a>.</p>
+
+	<aside class="note">
+		<p><strong>P.S. A note from Karla:</strong> I'm obviously biased, but one of my favourite
+		things about Snow Slider is how much you can discover in these tiny worlds. Don't just
+		rush through the puzzles! Look around, explore and keep an eye out for... well,
+		surprises. There are quite a few hidden throughout the game. If you find the bear under
+		the mountain, try clicking it and see what happens. Have fun!</p>
+	</aside>
 
 	<h2>Follow the game</h2>
 	<div class="social">
