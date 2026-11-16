@@ -1,8 +1,9 @@
 # Snow Slider Puzzles
 
-Support and privacy pages for the Snow Slider Puzzles app, served with GitHub Pages:
+The game's page, and its support and privacy pages, served with GitHub Pages:
 
+- [Snow Slider Puzzles](index.html)
 - [Support](support.html)
 - [Privacy policy](privacy.html)
 
-The sources live in the game's repository (`store/`); copy them here when they change.
+The sources live in the game's repository (`store/`, with the page's pictures in `store/img/`); copy them here when they change.
