@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Snow Slider</title>
+<meta name="description" content="Snow Slider Puzzles is made by Ricardo, a solo developer, with the help of Karla.">
+<style>
+	:root {
+		--bg: #f4f8fb; --card: #ffffff; --text: #1d2a36; --muted: #5a6b7a; --accent: #2d6f9e; --line: #dbe5ee;
+	}
+	@media (prefers-color-scheme: dark) {
+		:root { --bg: #0f1820; --card: #17232e; --text: #e4edf4; --muted: #9cb0c0; --accent: #7cc0ec; --line: #26394a; }
+	}
+	* { box-sizing: border-box; }
+	[hidden] { display: none !important; }
+	body {
+		margin: 0; background: var(--bg); color: var(--text);
+		font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	}
+	main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+	a { color: var(--accent); }
+	.back { display: inline-block; margin-bottom: 24px; font-size: 15px; text-decoration: none; }
+	h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; }
+	.lead { color: var(--muted); margin: 0 0 24px; }
+	.picture { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; border-radius: 16px; border: 1px solid var(--line); display: block; margin: 0 0 28px; }
+	h2 { font-size: 20px; margin: 36px 0 12px; }
+
+	.social { display: flex; flex-wrap: wrap; gap: 12px; }
+	.social a {
+		display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 10px 18px;
+		background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+		color: var(--text); text-decoration: none; font-weight: 600;
+	}
+	.social a:hover { border-color: var(--accent); color: var(--accent); }
+	.social svg { width: 20px; height: 20px; fill: currentColor; flex: none; }
+
+	footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+	footer span { margin-right: auto; }
+</style>
+</head>
+<body>
+<main>
+	<a class="back" href="index.html">‹ Snow Slider Puzzles</a>
+	<h1>About</h1>
+	<p class="lead">A penguin, a lot of ice, and two people.</p>
+
+	<img class="picture" src="img/about_penguin.jpg" alt="The penguin in its viking helmet at Frost Peak's camp, a little cabin behind it">
+
+	<p>Hi, I'm Ricardo. I've been a software engineer for 8 years, and Snow Slider is the game
+	I build in my own time, as a solo developer: the levels, the code, the art and the sounds
+	(every sound effect is made in code), in Godot.</p>
+
+	<p>It started with one simple idea: on ice, you can't stop halfway. From there it grew
+	mountain by mountain, each one adding a new thing to slide into, bounce off or
+	push around, until a penguin had 13 mountains to climb.</p>
+
+	<p>I didn't make it alone, though. My girlfriend, Karla, has played every version of it:
+	she tries the new levels first, tells me when one is too hard or not fun yet, and has
+	shaped more of the game than anyone. If a level feels just right, she probably had a
+	hand in it.</p>
+
+	<p>Thank you for playing. If you'd like to say hello, report a bug or share a solve, I'd
+	love to hear from you.</p>
+
+	<h2>Follow the game</h2>
+	<div class="social">
+		<a href="https://www.instagram.com/snow.slider.puzzle/" rel="me noopener">
+			<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg>
+			Instagram
+		</a>
+		<a href="https://x.com/snowsliderpuzzl" rel="me noopener">
+			<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.4l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.25 6.93 6.06-6.93Zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41Z"/></svg>
+			X
+		</a>
+		<a href="https://www.tiktok.com/@snow.slider.puzzle" rel="me noopener">
+			<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48Z"/></svg>
+			TikTok
+		</a>
+	</div>
+
+	<footer>
+		<span>© 2026 Spice Octopus Studios</span>
+		<a href="index.html">The game</a>
+		<a href="support.html">Support</a>
+		<a href="privacy.html">Privacy policy</a>
+	</footer>
+</main>
+</body>
+</html>
